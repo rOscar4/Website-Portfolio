@@ -1,0 +1,260 @@
+body {
+    margin: 0;
+    background-color: hsl(247, 12%, 29%);
+    color: #FFFFFF;
+    font-family: sans-serif;
+    /*
+    background-image: url(images/curves.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    */
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: hsl(247, 0%, 80%);
+}
+
+.navigationBar {
+    display: flex;
+    justify-content: right;
+    background-color: hsl(247, 12%, 29%);
+    position: sticky;
+    top: 0;
+    transition: background-color 500ms;
+}
+
+.navigationBar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navigationBar a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    text-align: center;
+}
+
+.navigationBar li:hover {
+    background-color: hsl(247, 12%, 38%);
+}
+
+.navigationBar.sticking {
+    background-color: hsl(247, 12%, 38%);
+}
+
+.navigationBar.sticking:hover {
+    background-color: hsl(247, 12%, 44%);
+}
+
+.mainSection {
+    display: flex;
+    height: 100%;
+}
+
+.LeftMainDiv {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightMainDiv {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skillColumn1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.skillItem {
+    border: 1px solid white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skillItem img {
+    width: 60px;
+}
+
+.projectsText, .contactText {
+    height: 20px;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.underAbout {
+    display: flex;
+}
+
+.manComputerImg {
+    width: 200px;
+}
+
+.aboutP {
+    font-size: 1.2rem;
+    margin: 20px 0 0 0px;
+    text-align: center;
+}
+
+.projectsSection {
+    height: 100%;
+}
+
+.project1, .project2, .project3 {
+    display: flex;
+    height: 100%;
+}
+
+.project2 {
+    justify-content: flex-end;
+}
+
+.imageHolder1, .imageHolder3 {
+    padding: 0 0 0 10px;
+    position: relative;
+    z-index: -1;
+}
+
+.imageHolder2 {
+    padding: 10px 10px 0 0;
+    position: relative;
+    height: 100%;
+    z-index: -1;
+}
+
+.imageHolder1::before, .imageHolder3::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 95%;
+    height: 95%;
+    margin: -10px -20px 0 0;
+    background-color: red;
+    z-index: -1;
+}
+
+.imageHolder2::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 95%;
+    margin: -10px 0 0 -20px;
+    background-color: red;
+    z-index: -1;
+}
+
+.projectImage {
+    height: 300px;
+}
+
+.projectInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactSection {
+    height: 100%;
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactText {
+    text-align: center;
+}
+
+.contactSubText {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.contactForm {
+    width: 80%;
+    max-width: 450px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: hsl(247, 12%, 24%);
+}
+
+.contactForm label {
+    margin: 0 0 1px 0;
+}
+
+.textName, .textEmail {
+    margin: 0 0 20px 0;
+}
+
+.submitButton {
+    margin: 24px 0 5px 0;
+    padding: 0 10px;
+    height: 30px;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+}
+
+.submitButton:hover {
+    background-color: gray;
+    color: white;
+}
+
+.submitButton:active {
+    background-color: black;
+}
+
+footer {
+    background-color: hsl(247, 12%, 20%);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 500px) {
+    .mainSection {
+        flex-direction: column;
+    }
+    .LeftMainDiv, .rightMainDiv {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 340px) {
+    .navigationBar a {
+        padding: 10px;
+    }
+}
