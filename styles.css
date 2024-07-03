@@ -1,7 +1,6 @@
 body {
     margin: 0;
     background-color: hsl(210, 50%, 98%);
-    background-color: white;
     color: #FFFFFF;
     color: black;
     font-family: sans-serif;
@@ -21,6 +20,7 @@ h1, h2 {
 
 h1 {
     font-size: 4rem;
+    color: hsl(234, 64%, 67%);
 }
 
 h2 {
@@ -31,7 +31,7 @@ h2 {
 .navigationBar {
     display: flex;
     justify-content: right;
-    background-color: hsl(247, 12%, 29%);
+    background-color: hsl(210, 50%, 95%);
     position: sticky;
     top: 0;
     transition: background-color 500ms;
@@ -45,7 +45,7 @@ h2 {
 }
 
 .navigationBar a {
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 20px;
     display: block;
