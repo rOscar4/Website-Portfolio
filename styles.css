@@ -6,20 +6,6 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-h1, h2 {
-    text-align: center;
-    margin: 0;
-}
-
-h1 {
-    font-size: 4rem;
-    color: hsl(234, 64%, 67%);
-}
-
-h2 {
-    font-size: 2rem;
-}
-
 .navigationBar {
     display: flex;
     justify-content: right;
@@ -57,18 +43,42 @@ h2 {
     background-color: hsl(210, 50%, 84%);;
 }
 
+h1, h2 {
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    color: hsl(234, 64%, 67%);
+    margin: 0 0 20px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+h3 {
+    font-weight: 100;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
 .section {
-    margin: 40px 0;
+    margin: 0px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.mainSection {
+.HeroSection {
     display: flex;
+    margin: 60px 0 0 0;
 }
 
-.LeftMainDiv {
+.LeftHeroDiv {
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -76,20 +86,24 @@ h2 {
     align-items: center;
 }
 
-.rightMainDiv {
+.rightHeroDiv {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.manComputerImg {
-    width: 200px;
+.heroImg {
+    width: 80%;
+    max-width: 250px;
+    padding: 0 0 0 0;
+    margin: auto;
 }
 
 .sectionTitle {
     position: relative;
     z-index: -1;
+    font-weight: 400;
 }
 
 .sectionTitle::before {
@@ -101,6 +115,13 @@ h2 {
     margin: 0px 0px 2px 10px;
     background-color: hsl(234, 64%, 72%);
     z-index: -1;
+}
+
+.breakline {
+    height: 6px;
+    width: 90%;
+    background-color: hsl(217, 70%, 80%);
+    margin: 40px auto;
 }
 
 .aboutP {
@@ -172,11 +193,6 @@ h2 {
     text-align: center;
 }
 
-.contactSubText {
-    text-align: center;
-    line-height: 1.6;
-}
-
 .contactForm {
     width: 100%;
     max-width: 400px;
@@ -236,12 +252,27 @@ footer {
     align-items: center;
 }
 
-@media (max-width: 500px) {
-    .mainSection {
+@media (max-width: 751px) {
+    .HeroSection {
         flex-direction: column;
+        margin: 0;
     }
-    .LeftMainDiv, .rightMainDiv {
-        flex: none;
-        width: 100%;
+    
+    .rightHeroDiv {
+        order: -1;
+        margin: 20px 0;
+    }
+
+    .heroImg {
+        max-width: 200px;
+    }
+
+    /* .heroImg {
+        width: 80%;
+        max-width: 250px;
+    } */
+
+    .skillRow {
+        flex-direction: column;
     }
 }
