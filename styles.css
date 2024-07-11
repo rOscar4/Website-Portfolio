@@ -6,6 +6,11 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+button {
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+}
+
 .navigationBar {
     display: flex;
     justify-content: right;
@@ -93,6 +98,26 @@ h3 {
     align-items: center;
 }
 
+.contactButton {
+    background-color: hsl(234, 64%, 66%);
+    color: white;
+    box-shadow: 2px 3px 5px 0px hsl(0, 0%, 0%, 25%);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    margin: 20px 0 0 0;
+}
+
+.contactButton:hover {
+    background-color: hsl(234, 64%, 70%);
+}
+
+.contactButton:active {
+    background-color: hsl(234, 64%, 74%);
+}
+
 .heroImg {
     width: 80%;
     max-width: 250px;
@@ -134,15 +159,18 @@ h3 {
 
 .skillRow {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .skillItem {
-    max-width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100px;
 }
 
 .skillItem img {
@@ -210,22 +238,37 @@ h3 {
     border-radius: 10px;
     border-style: none;
     box-shadow: 0px 4px 4px 0px hsl(0, 0%, 0%, 25%);
-    font-family: "Inter", sans-serif;
     min-width: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 8px 6px;
     /* min-height: 50px; */
+}
+
+.projectButton:hover {
+    background-color: hsl(234, 64%, 68%);
+}
+
+.projectButton:active {
+    background-color: hsl(234, 64%, 64%);
 }
 
 .projectButton span {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
+    margin: 0 4px 0 0;
 }
 
-.projectButton img {
-    width: 20px;
+.externalLinkIcon {
+    width: 16px;
+    margin: 0 0 1px 0;
+}
+
+.gitHubIcon {
+    width: 19px;
+    margin: 0 0 3px 1px;
 }
 
 .contactText {
@@ -237,6 +280,7 @@ h3 {
     max-width: 400px;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     border-radius: 50px;
     padding: 20px;
     background-color: hsl(222, 64%, 92%);
@@ -244,8 +288,19 @@ h3 {
 }
 
 .contactForm label {
-    padding: 0 0 2px 2px;
+    margin: 0 0 2px 2px;
+    font-size: 1.1rem;
 }
+
+.contactForm input, .contactForm textarea {
+    font-size: 1.1rem;
+}
+
+.contactForm input:focus, .contactForm textarea:focus {
+    outline: none;
+    background-color: red;
+}
+
 
 .textName, .textEmail, .message {
     border-radius: 10px;

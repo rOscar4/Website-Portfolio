@@ -12,22 +12,23 @@
         <title>Oscar Rodriguez Website Portfolio</title>
     </head>
     <body>
-        <nav class="navigationBar">
+        <!--NavBar-->
+        <nav id="navigationBar" class="navigationBar">
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Skills</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <!--Hero-->
-        <section class="section, HeroSection">
+        <section id="home" class="section, HeroSection">
             <div class="LeftHeroDiv">
                 <h1>Oscar Rodriguez</h1>
                 <h2>Front-End Web Developer</h2>
                 <h3>Combining technical skill with user feedback to craft exceptional web applications.</h3>
-                <button class="submitButton">Contact</button>
+                <button class="contactButton" onclick="contactClick">Contact</button>
             </div>
             <div class="rightHeroDiv">
                     <img class="heroImg" src="images/coder.png">
@@ -35,13 +36,13 @@
         </section>
         <div class="breakline"></div>
         <!--About-->
-        <section class="section">
+        <section id="about" class="section">
             <h2 class="sectionTitle">About</h2>
             <p class="aboutP">Hey there! I'm Oscar Rodriguez, a full-stack web developer with a passion for building innovative and user-friendly web applications. I bring a unique blend of technical expertise, user empathy, and a relentless drive to build exceptional web experiences. I'm a quick learner, a team player, and I'm always eager to learn from experienced developers. If you're looking for a full-stack developer who can not only code but also understand your business goals and user needs, then I'm your guy! </p>
         </section>
         <div class="breakline"></div>
         <!--Skills-->
-        <section class="section">
+        <section id="skills" class="section">
             <h2 class="sectionTitle">Skills</h2>
             <div class="skillRow"> 
                 <div class="skillItem">
@@ -60,7 +61,7 @@
         </section>
         <div class="breakline"></div>
         <!--Projects-->
-        <section class="section">
+        <section id="projects" class="section">
             <h2 class="sectionTitle">Projects</h2>
             <div class="projectContainer">
                 <div class="imageContainer">
@@ -72,19 +73,19 @@
                     <div class="projectButtonsDiv">
                         <button class="projectButton">
                             <span>Live Demo</span>
-                            <img src="images/icons/External link white.png"/>
+                            <img class="externalLinkIcon" src="images/icons/External link white.png"/>
                         </button>
                         <button class="projectButton">
                             <span>GitHub</span>
-                            <img src="images/icons/Github Icon.png"/>
+                            <img class="gitHubIcon" src="images/icons/Github Icon.png"/>
                         </button>
                     </div>
                 </div>
         </section>
         <div class="breakline"></div>
         <!--Contact-->
-        <section class="section">
-            <h2 class="sectionTitle">Contact</h2>   
+        <section id="contact" class="section">
+            <h2 class="sectionTitle">Contact</h2>
             <form class="contactForm">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" class="textName" required>
@@ -92,7 +93,7 @@
                 <input type="email" id="email" name="email" class="textEmail" required>
                 <label for="message">Message:</label>
                 <textarea class="message" id="message" name="message" rows="4" required></textarea>
-                <input type="submit" value="Send Message" class="submitButton">
+                <button type="submit" class="submitButton">Send Message</button>
             </form>
         </section>
         <footer>
