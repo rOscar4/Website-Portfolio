@@ -49,8 +49,12 @@ button {
 }
 
 h1, h2 {
-    text-align: center;
     margin: 0;
+}
+
+.nameContainer {
+    width:501.45px;
+    text-align: left;
 }
 
 h1 {
@@ -58,11 +62,41 @@ h1 {
     font-weight: 400;
     color: hsl(234, 64%, 67%);
     margin: 0 0 20px 0;
+    min-height: 78px;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    border: solid hsl(234, 64%, 67%);
+    border-width: 0 6px 6px 0;
+    padding: 14px;
+    transform: rotate(-45deg) translateY(-20px) translateX(-55px);
+}
+
+.typewriterCursor::before {
+    content: '';
+    width: 30px;
+    height: 70px;
+    background-color: hsl(234, 64%, 67%);
+    position: absolute;
+    transform: translateY(0px) translateX(8px);
+    animation: blink 1.4s steps(1, end) infinite;
+}
+
+@keyframes blink {
+    from, to {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
 }
 
 h2 {
     font-size: 2rem;
     font-weight: 300;
+    text-align: center;
 }
 
 h3 {
@@ -243,7 +277,6 @@ h3 {
     align-items: center;
     justify-content: center;
     padding: 8px 6px;
-    /* min-height: 50px; */
 }
 
 .projectButton:hover {
@@ -275,41 +308,43 @@ h3 {
     text-align: center;
 }
 
-.contactForm {
+.contactFormDiv {
     width: 100%;
-    max-width: 400px;
+}
+
+.contactForm {
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    border-radius: 50px;
+    border-radius: 40px;
     padding: 20px;
     background-color: hsl(222, 64%, 92%);
     box-shadow: 0px 4px 10px 5px hsl(0, 0%, 0%, 25%);
 }
 
 .contactForm label {
-    margin: 0 0 2px 2px;
+    margin: 0 0 2px 5px;
     font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .contactForm input, .contactForm textarea {
     font-size: 1.1rem;
+    padding-left: 5px;
+    border-radius: 10px;
+    border-style: none;
+    min-height: 30px;
+    margin: 0 0 20px 0;
 }
 
 .contactForm input:focus, .contactForm textarea:focus {
     outline: none;
-    background-color: red;
+    background-color: hsl(0, 0%, 97%);
 }
 
-
-.textName, .textEmail, .message {
-    border-radius: 10px;
-    border-style: none;
-    min-height: 30px;
-}
-
-.textName, .textEmail {
-    margin: 0 0 20px 0;
+#messageLabel {
+    margin-bottom: 3px;
 }
 
 .message {
@@ -319,23 +354,24 @@ h3 {
 }
 
 .submitButton {
-    margin: 24px 0 5px 0;
-    padding: 0 10px;
-    height: 30px;
-    align-self: center;
-    border-radius: 10px;
-    border: none;
-    background-color: hsl(234, 64%, 67%);
+    background-color: hsl(234, 64%, 66%);
     color: white;
+    box-shadow: 2px 3px 5px 0px hsl(0, 0%, 0%, 25%);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-bottom:5px;
+    align-self: center;
 }
 
 .submitButton:hover {
-    background-color: gray;
-    color: white;
+    background-color: hsl(234, 64%, 70%);
 }
 
 .submitButton:active {
-    background-color: black;
+    background-color: hsl(234, 64%, 74%);
 }
 
 footer {
@@ -361,11 +397,6 @@ footer {
     .heroImg {
         max-width: 200px;
     }
-
-    /* .heroImg {
-        width: 80%;
-        max-width: 250px;
-    } */
 
     .skillRow {
         flex-direction: row;

@@ -45,3 +45,16 @@ contactButton.onclick = function() {
         behavior: "smooth"
         });
 }
+
+
+//Typing out name
+const typewriter = new Typewriter('#nameTitle', {
+    delay: 50,
+    pauseFor: 0,
+    cursor: "",
+    cursorClassName: 'typewriterCursor'
+});
+
+typewriter
+    .start()
+    .typeString('Oscar Rodriguez');
