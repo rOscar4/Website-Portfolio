@@ -34,14 +34,17 @@
                 <button class="contactButton" onclick="contactClick">Contact</button>
             </div>
             <div class="rightHeroDiv">
-                    <img class="heroImg" src="images/coder.png">
+                <img class="heroImg" src="images/coder.png">
             </div>
         </section>
         <div class="breakline"></div>
         <!--About-->
         <section id="about" class="section">
             <h2 class="sectionTitle">About</h2>
-            <p class="aboutP">Hey there! I'm Oscar Rodriguez, a full-stack web developer with a passion for building innovative and user-friendly web applications. I bring a unique blend of technical expertise, user empathy, and a relentless drive to build exceptional web experiences. I'm a quick learner, a team player, and I'm always eager to learn from experienced developers. If you're looking for a full-stack developer who can not only code but also understand your business goals and user needs, then I'm your guy! </p>
+            <p class="aboutP">Hey there! I'm Oscar Rodriguez, a full-stack web developer with a passion for building innovative and user-friendly web applications.
+                I bring a unique blend of technical expertise, user empathy, and a relentless drive to build exceptional web experiences.
+                I'm a quick learner, a team player, and I'm always eager to learn from experienced developers.
+                If you're looking for a front-end developer who can not only code but also understand your business goals and user needs, then I'm your guy! </p>
         </section>
         <div class="breakline"></div>
         <!--Skills-->
@@ -90,7 +93,7 @@
         <section id="contact" class="section">
             <h2 class="sectionTitle">Contact</h2>
             <div class="contactFormDiv">
-                <form class="contactForm">
+                <form class="contactForm" action="https://formsubmit.co/dd89b391488639186a33ed09774fc93d" method="POST">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
                     <label for="email">Email:</label>
@@ -98,6 +101,9 @@
                     <label for="message" id="messageLabel">Message:</label>
                     <textarea class="message" id="message" name="message" rows="4" required></textarea>
                     <button type="submit" class="submitButton">Send Message</button>
+                    <input type="hidden" name="_subject" value="Web Portfolio Message">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://roscar4.github.io/Website-Portfolio/thank-you">
                 </form>
             </div>
         </section>

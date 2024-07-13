@@ -11,6 +11,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    transition-duration: 400ms;
+}
+
 .navigationBar {
     display: flex;
     justify-content: right;
@@ -114,7 +118,8 @@ h3 {
 
 .HeroSection {
     display: flex;
-    margin: 60px 0 0 0;
+    margin: 60px auto 0 auto;
+    max-width: 1100px;
 }
 
 .LeftHeroDiv {
@@ -186,9 +191,10 @@ h3 {
 }
 
 .aboutP {
-    max-width: 600px;
+    max-width: 1000px;
     text-align: center;
     margin: 0 auto;
+    font-size: 1.05rem;
 }
 
 .skillRow {
@@ -214,7 +220,7 @@ h3 {
 .projectContainer {
     display: flex;
     background: hsl(222, 64%, 94%);
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     border-radius: 50px;
     max-width: 700px;
     box-shadow: 0px 4px 10px 5px hsl(0, 0%, 0%, 25%);
@@ -264,7 +270,7 @@ h3 {
     margin: 1rem 0;
     display: flex;
     justify-content: space-evenly;
-    margin: 16px 20px 16px 0;
+    margin: 16px 20px 24px 0;
 }
 
 .projectButton {
@@ -383,7 +389,8 @@ footer {
     margin: 60px 0 0 0;
 }
 
-@media (max-width: 751px) {
+
+@media (max-width: 950px) {
     .HeroSection {
         flex-direction: column;
         margin: 0;
@@ -405,4 +412,44 @@ footer {
     .projectButtonsDiv {
         flex-direction: column;
     }
+
+    /*good place to turn menu into hamburger menu*/
+    /*Also, don't forget to add margin or padding to certain items for space on sides*/
+
+}
+
+@media (max-width: 630px) {
+    .nameContainer {
+        width: 306px;
+        text-indent: 65px;
+    }
+}
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    h1::before {
+        content: '';
+        position: absolute;
+        border: solid hsl(234, 64%, 67%);
+        border-width: 0 6px 6px 0;
+        padding: 14px;
+        transform: rotate(-45deg) translateY(-20px) translateX(-55px);
+    }
+
+    .typewriterCursor::before {
+        content: '';
+        width: 30px;
+        height: 70px;
+        background-color: hsl(234, 64%, 67%);
+        position: absolute;
+        transform: translateY(0px) translateX(8px);
+        animation: blink 1.4s steps(1, end) infinite;
+    }
+    
+    /* .nameContainer {
+        width: 306px;
+    } */
 }
