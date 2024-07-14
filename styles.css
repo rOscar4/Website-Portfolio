@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 0 16px;
     background-color: hsl(210, 50%, 98%);
     color: #FFFFFF;
     color: black;
@@ -23,6 +23,7 @@ button:hover {
     top: 0;
     transition: background-color 500ms;
     z-index: 2;
+    margin: 0 -16px;
 }
 
 .navigationBar ul {
@@ -50,6 +51,15 @@ button:hover {
 
 .navigationBar.sticking ul li:hover {
     background-color: hsl(210, 50%, 84%);;
+}
+
+.sideMenu {
+    display: none;
+    padding: 20px;
+}
+
+.sideMenuIcon {
+    width: 30px;
 }
 
 h1, h2 {
@@ -386,11 +396,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 60px 0 0 0;
+    margin: 60px -16px 0 -16px;
 }
 
 
-@media (max-width: 950px) {
+@media (max-width: 910px) {
     .HeroSection {
         flex-direction: column;
         margin: 0;
@@ -413,9 +423,40 @@ footer {
         flex-direction: column;
     }
 
-    /*good place to turn menu into hamburger menu*/
-    /*Also, don't forget to add margin or padding to certain items for space on sides*/
+    .projectButton {
+        margin: 8px auto;
+        width: 90%;
+    }
 
+    .navigationBar {
+        background-color: hsl(210, 50%, 92%, 97%);
+        position: fixed;
+    }
+    
+    .navigationBar ul {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .navigationBar a {
+        text-align: left;
+    }
+    
+    .navigationBar.sticking {
+        background-color: hsl(210, 50%, 92%, 97%);
+    }
+
+    .navItem {
+        display: none;
+    }
+
+    .sideMenu {
+        display: block;
+    }
+
+    .navBarHeight {
+        height: 100%;
+    }
 }
 
 @media (max-width: 630px) {
@@ -427,29 +468,38 @@ footer {
 
 @media (max-width: 420px) {
     h1 {
-        font-size: 1rem;
+        font-size: 3rem;
     }
 
     h1::before {
         content: '';
         position: absolute;
         border: solid hsl(234, 64%, 67%);
-        border-width: 0 6px 6px 0;
-        padding: 14px;
-        transform: rotate(-45deg) translateY(-20px) translateX(-55px);
+        border-width: 0 5px 5px 0;
+        padding: 10px;
+        transform: rotate(-45deg) translateY(-13px) translateX(-40px);
     }
 
     .typewriterCursor::before {
         content: '';
-        width: 30px;
-        height: 70px;
+        width: 20px;
+        height: 46px;
         background-color: hsl(234, 64%, 67%);
         position: absolute;
-        transform: translateY(0px) translateX(8px);
+        transform: translateY(4px) translateX(6px);
         animation: blink 1.4s steps(1, end) infinite;
     }
-    
-    /* .nameContainer {
-        width: 306px;
-    } */
+
+    .nameContainer {
+        width: 230px;
+        text-indent: 47px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
 }

@@ -1,5 +1,6 @@
 //Sticking navbar
 const navigationBar = document.querySelector(".navigationBar");
+const navBar = document.querySelector('#navigationBar');
 const scrollWatcher = document.createElement("div");
 
 scrollWatcher.setAttribute("data-scroll-watcher","");
@@ -19,22 +20,82 @@ navLinks.forEach(link => {
       e.preventDefault();
       const targetSection = document.getElementById(this.getAttribute('href').substring(1));
       const offset = targetSection.offsetTop;
-      
+
       const navBar = document.getElementById("navigationBar");
       const navBarHeight = navBar.offsetHeight;
       const adjustedOffset = offset - navBarHeight - 30;
 
-      window.scrollTo({
-        top: adjustedOffset,
-        behavior: "smooth"
-        });
+      if(window.innerWidth <= 910) {
+        window.scrollTo({
+            top: offset - 20,
+            behavior: "smooth"
+            });
+      }
+      else {
+        window.scrollTo({
+            top: adjustedOffset,
+            behavior: "smooth"
+            });
+      }
     });
 });
+
+
+//Toggle SideBar
+const sideMenuElement = document.querySelector('#navigationBar .sideMenu')
+sideMenuElement.onclick = function() {
+    const navBar = document.querySelector('#navigationBar')
+    const sideMenuItems = navBar.querySelectorAll('li')
+
+    sideMenuItems.forEach(item => {
+        if(item != sideMenuElement) {
+            item.classList.toggle('navItem');
+        }
+    });
+    navBar.classList.toggle('navBarHeight');
+}
+
+
+//Closing the sideBar if clicking out of it
+const sideMenuItems = navBar.querySelectorAll('.navItem')
+
+document.onclick = function(event) {
+    const hasNavItemClass = [...sideMenuItems].some(item => item.classList.contains('navItem'));
+    if(hasNavItemClass == false) {
+        if (!event.target.closest('#navigationBar')) {
+            sideMenuItems.forEach(item => {
+                if(item != sideMenuElement) {
+                    item.classList.toggle('navItem');
+                }
+            });
+            navBar.classList.toggle('navBarHeight');
+        }
+    }
+}
+
+
+//Hide SideBar if item clicked
+const navItems = navBar.querySelectorAll('.navItem')
+
+function toggleNavItemVisibility () {
+    if(window.innerWidth <= 950) {
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navItems.forEach(item => {
+                    item.classList.toggle('navItem');
+                })
+                navBar.classList.toggle('navBarHeight');
+            })
+        })
+    }
+}
+toggleNavItemVisibility();
+
+
 
 //contactButton click
 const contactButton = document.querySelector(".contactButton");
 const contactSection = document.getElementById("contact");
-const navBar = document.getElementById("navigationBar");
 
 const contactHeight = contactSection.offsetTop;
 const adjustedContact = contactHeight - (navBar.offsetHeight) - 30;
